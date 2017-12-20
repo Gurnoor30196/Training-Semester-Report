@@ -1,0 +1,91 @@
+\documentclass[12pt]{report}
+\usepackage[print,nopanel]{pdfscreen}
+%\begin{print}
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+%\section{type}
+%\usepackage{sagetex}
+\usepackage{lastpage}
+\usepackage{macro/macro}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+\usepackage[Glenn]{fncychap}
+\lhead{\large\bfseries Training Report}
+\usepackage[left=2.5cm, right=1.5cm, top=2.5cm, bottom=1.5cm]{geometry}
+\pagestyle{fancy}
+%\end{print}
+\margins{2.5cm}{1.5cm}{1.5cm}{1.5cm}
+\begin{screen}
+
+\renewcommand{\encodingdefault}{T1}
+\usepackage{setspace}
+\linespread{1.5}
+\renewcommand{\rmdefault}{ptm}
+\end{screen}
+\screensize{8cm}{9cm}
+\overlay{overlay8.pdf}
+\usepackage{graphicx}
+
+\begin{document}
+\input{titlepage.tex}
+\begin{screen}
+\ppttitle
+\end{screen}
+\footskip 0.7cm
+\thispagestyle{empty}
+\pagetitle
+\newpage
+\pagenumbering{Roman}
+\cfoot{\thepage}
+
+
+
+\newpage
+\tableofcontents
+\newpage
+
+
+\pagenumbering{arabic}
+\cfoot{\thepage}
+
+\newpage
+\chapter{Introduction To Big Data}
+\input{BigData.tex}
+\newpage
+
+\chapter{Introduction To Data Mining}
+\input{DataMining.tex}
+\newpage
+
+\chapter{PHP}
+\input{Php.tex}
+\newpage
+
+\chapter{HUMAN PSYCHOLOGY}
+\input{HumanPsychology.tex}
+\newpage
+
+\chapter{Computational biology}
+\input{ComputationalBiology.tex}
+\newpage
+
+\chapter{JAVA}
+\input{Java.tex}
+\newpage
+
+\chapter{Server Administration}
+\input{ServerAdministration.tex}
+\newpage
+
+\chapter{Human Values}
+\input{HumanValues.tex}
+\newpage
+
+\chapter{Performance Enhancement}
+\input{PerformanceEnhancement.tex}
+\newpage
+
+\chapter{Introduction to Raspberry pi}
+\input{IntroToReact.tex}
+\end{document}
