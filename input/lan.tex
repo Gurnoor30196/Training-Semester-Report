@@ -1,0 +1,367 @@
+\section{Development and Implementation}
+\subsection{Introduction to Languages}
+\subsubsection{Java}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/java.png}
+\caption{Java Logo}
+\end{figure}
+Java programming language was originally developed by Sun Microsystems which was initiated by James
+Gosling and released in 1995 as core component of Sun Microsystems' Java platform. The latest release of
+the Java Standard Edition is Java SE 8. With the advancement of Java and its widespread popularity,
+multiple configurations were built to suit various types of platforms. For example: J2EE for Enterprise
+Applications, J2ME for Mobile Applications.
+
+
+\subsection{Python}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/py.png}
+\caption{Python Logo}
+\end{figure}
+Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed
+to be highly readable. It uses English keywords frequently where as other languages use punctuation, and
+it has fewer syntactical constructions than other languages.
+\subsection{Javascript}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.3\textwidth]{input/images/JS.png}
+\caption{Javascript logo}
+\hspace{-1.5em}
+\end{figure}
+
+JavaScript (/ˈdʒɑːvəˌskrɪpt/) is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, it is one of the three essential technologies of World Wide Web content production; the majority of websites employ it and it is supported by all modern web browsers without plug-ins. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles. It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage or graphics facilities, relying for these upon the host environment in which it is embedded.
+
+\subsection{SQLite}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/sq.png}
+\caption{SQLite Logo}
+\end{figure}
+SQLite is an in-process library that implements a self-contained, serverless, zero-configuration,
+transactional SQL database engine. It is a database, which is zero-configured, which means like other
+databases you do not need to configure it in your system. SQLite engine is not a standalone process like
+other databases, you can link it statically or dynamically as per your requirement with your application.
+SQLite accesses its storage files directly.
+\section{Any other Supporting Languages or tools}
+\subsection{Android}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/android.png}
+\caption{Android Logo}
+\end{figure}
+Android is a mobile operating system developed by Google, based on the Linux kernel and designed
+primarily for touchscreen mobile devices such as smartphones and tablets. Android's user interface is
+mainly based on direct manipulation, using touch gestures that loosely correspond to real-world actions,
+such as swiping, tapping and pinching, to manipulate on-screen objects, along with a virtual keyboard for
+text input. 
+\subsection{Android Studio}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/as.png}
+\caption{Android Studio Logo}
+\end{figure}
+Android Studio is the official integrated development environment (IDE) for Android platform
+development. Android Studio provides the fastest tools for building apps on every type of Android device.
+\subsection{Strophe.js}
+Strophe.js is an XMPP library for JavaScript. Its primary purpose is to enable web-based, real-time XMPP
+applications that run in any browser. This library uses either Bidirectional-streams Over Synchronous
+HTTP (BOSH) to emulate a persistent, stateful, two-way connection to an XMPP server or alternatively
+Web Sockets.
+\subsection{BOSH (protocol)}
+Bidirectional-streams Over Synchronous HTTP (BOSH) is a transport protocol that emulates a bidirectional
+stream between two entities (such as a client and a server) by using multiple synchronous HTTP
+request/response pairs without requiring the use of polling or asynchronous chunking.
+\subsection{Ejabberd}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/ej.png}
+\caption{Ejabberd Logo}
+\end{figure}
+ejabberd is an XMPP application server, written mainly in the Erlang programming language. It can run
+under several Unix-like operating systems such as Mac OS X, GNU/Linux, FreeBSD, NetBSD, OpenBSD
+and OpenSolaris. Additionally, ejabberd can run under Microsoft Windows. The name ejabberd stands for
+Erlang Jabber Daemon (Jabber being a former name for XMPP) and is written in lowercase only, as is
+common for daemon software.
+\subsection{Errbot}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{input/images/er.png}
+\caption{Errbot Logo}
+\end{figure}
+Errbot is a chatbot, a daemon that connects to your favourite chat service and brings your tools into the
+conversation. The goal of the project is to make it easy for you to write your own plugins, so you can make
+it do whatever you want: a deployment, retrieving some information online, trigger a tool via an API, troll
+a co-worker. Errbot is being used in a lot of different contexts: chatops (tools for devops), online gaming
+chatrooms like EVE, video streaming chatrooms like livecoding.tv, home security, etc.
+\subsection{SleekXMPP}
+SleekXMPP is an elegant Python library for XMPP (aka Jabber, Google Talk, etc). SleekXMPP is an MIT licensed XMPP library for Python 2.6/3.1+, and is featured in examples in XMPP: The Definitive Guide
+by Kevin Smith, Remko Tronçon, and Peter Saint-Andre. If you’ve arrived here from reading the Definitive
+Guide, please see the notes on updating the examples to the latest version of SleekXMPP.
+\input{input/techno-used.tex}
+\section{Implementation of project}
+\subsection{Architecture of project}
+The following is the architecture of the Paigaam app. It contains the following modules:
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/im.png}
+\caption{Paigaam Architecture}
+\end{figure}\\
+\noindent \textbf{Server}
+The server is including the following modules:
+\begin{itemize}
+\item Ejabberd Server: Ejabberd is an XMPP server. It manages the user chats and user accounts and is
+connected to ejabberd database.
+\item Errbot: This is the brain behind the Paigaam assistant and is used to manage bot requests. It is
+connected to a SQLite database.
+\end{itemize}
+\noindent \textbf{Client}
+The client includes the following modules:
+\begin{itemize}
+\item Android App(Paigaam): The app has chatting features and a chatbot to answer user queries.
+\item JavaScript Web App: This is the web based client of Paigaam.
+\end{itemize}
+\subsection{Working of the Paigaam-Assistant(Chatbot)}
+The chatbot working is demonstrated in the following figure:
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/aeb.png}
+\caption{Paigaam-Assistant Working}
+\end{figure}\\
+\begin{itemize}
+\item Errbot
+The Errbot runs the python scripts and convert messages in XMPP format with the help of SleekXMPP.
+\item SleekXMPP
+SleekXMPP acts as an interface between Errbot and ejabberd and helps Errbot to send/receive messages
+to/from the ejabberd XMPP server.
+\item Ejabberd
+The Ejabberd XMPP server is responsible for the messaging service of the app.
+\item Paigaam Assistant
+The Paigaam assistant(chatbot) sends and gets messages from the ejabberd server and shows them to the
+users.
+\item Users
+The users interact with the chatbot to ask queries and get the answers.
+\end{itemize}
+\section{Test Cases}
+The test cases include the testing of the Paigaam app, the Paigaam assistant(Chatbot) and as well as the
+web client of Paigaam.
+\subsection{Paigaam App}
+\begin{enumerate}
+\item Login\\
+\noindent \textbf{Description:}
+A non-registered user should not be able to successfully login into the app.\\
+\noindent \textbf{Precondition:}
+The user must not be registered with an email address and password.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app.
+\item Click on Options and then Manage Accounts.
+\item Click on Add account icon.
+\item Enter the wrong registered roll id and password and click on next.
+\end{itemize}
+\noindent \textbf{Expected Result:}
+A message is displayed saying unauthorized password and/or server not found.\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s1.png}
+\caption{Login Test ID and Password}
+\end{figure}
+\item Internet Connectivity\\
+\noindent \textbf{Description:}
+The user should be shown a message if the internet is not active.\\
+\noindent \textbf{Precondition:}
+Internet is not connected.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app.
+\item Click on Options and then Manage Accounts.
+\end{itemize}
+\noindent \textbf{Expected Result:}
+A message is displayed saying No Connectivity under the account name.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s2.png}
+\caption{Internet Connectivity Test}
+\end{figure}
+\item Sending message to a contact\\
+\noindent \textbf{Description:}
+A registered user should be able to send a message to a registered contact.\\
+\noindent \textbf{Precondition:}
+The user must already be registered with an email address and password and should not be
+connected to the internet\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app.
+\item Click on the name of the contact to send a message
+\item Type the message in the field.
+\item Click on the send button
+\end{itemize}
+\noindent \textbf{Expected Result:}
+A message state 'waiting' is shown below the sent message until the internet is connected.\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s3.png}
+\caption{Sending Message Test}
+\end{figure}
+\item Sending an encrypted message/file to a contact using OMEMO (Multi-End Message and
+Object Encryption).\\
+\noindent \textbf{Description:}
+A registered user should be able to send an encrypted message to a contact.\\
+\noindent \textbf{Precondition:}
+The user must already be registered with an email address and password and internet is
+connected and OMEMO encryption is selected.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app.
+\item Click on the name of the contact to send a message.
+\item Select encryption method to OMEMO.
+\item Select the file to send.
+\item Click on the send button
+\end{itemize}
+\noindent \textbf{Expected Result:}
+The file/image is sent successfully with an encryption lock sign below the message.\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s4.png}
+\caption{Sending Encrypted text/file Test}
+\end{figure}
+\item Sending and receiving messages in a group\\
+\noindent \textbf{Description:}
+A registered user should be able to send an encrypted message in a group.\\
+\noindent \textbf{Precondition:}
+The user must already be registered with an email address and password and internet is
+connected.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app.
+\item Click on the name of the group to send a message.
+\item Click on the send button
+\end{itemize}
+\noindent \textbf{Expected Result:}
+The message is sent successfully..\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s5.png}
+\caption{Messaging in Group Test}
+\end{figure}
+\end{enumerate}
+\subsection{Paigaam Assistant(Chatbot)}
+\begin{itemize}
+\item
+ Sending queries to the chatbot as a student and getting the required results.
+\noindent \textbf{Description:}
+A registered student should be able to send queries to the chatbot and get the appropriate
+results.\\
+\noindent \textbf{Precondition:}
+The user must already be registered with an email address and password and internet is
+connected.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app and click on Paigaam-Assistant from the contact list.
+\item Type the below query and press send button:
+\begin{enumerate}
+\item Hi
+\item My Fee Status
+\item My attendance
+\item My marks in 7th semester
+\item Teacher details
+\end{enumerate}
+\end{itemize}
+\noindent \textbf{Expected Result:}
+The chatbot should reply with the correct message corresponding to the query.\\
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s11.png}
+\caption{Testing Paigaam Assistant as a Student}
+\end{figure}
+\item
+Sending queries to the chatbot as a teacher and getting the required results.\\
+\noindent \textbf{Description:}
+A registered teacher should be able to send queries to the chatbot and get the appropriate
+results.\\
+\noindent \textbf{Precondition:}
+The teacher must already be registered with an email address and password and internet is
+connected.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open the app and click on Paigaam-Assistant from the contact list.
+\item Type the below query and press send button:
+\begin{enumerate}
+\item Hi
+\item My courses
+\item List students under course number 200
+\end{enumerate}
+\item Click on the send button
+\end{itemize}
+\noindent \textbf{Expected Result:}
+The chatbot should reply with the correct message corresponding to the query.\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s12.png}
+\caption{Testing Paigaam Assistant as a Teacher}
+\end{figure}
+\end{itemize}
+\subsection{Paigaam Web Client}
+\begin{itemize}
+\item
+Login and messaging
+\noindent \textbf{Description:}
+A registered user should be able to login into the app and send messages to contacts.\\
+\noindent \textbf{Precondition:}
+Internet should be connected and modern browser such as Chrome/Firefox should be used.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open a web browser and open the URL https://ambivert.me/jsxc/example/
+\item Enter the registered ID and password
+\item Click on Login Button
+\item Once logged in, click on a contact name
+\item Send message.
+\end{itemize}
+\noindent \textbf{Expected Result:}
+The user is successfully logged in and the main interface of the app is shown.\\
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{input/images/s21.png}
+\caption{Paigaam Login Test}
+\end{figure}
+\newpage
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{input/images/s22.png}
+\caption{Paigaam Login Success Test}
+\end{figure}
+\item
+Video Chat\\
+\noindent \textbf{Description:}
+A registered user should be able to Video chat with a contact.\\
+\noindent \textbf{Precondition:}
+Internet should be connected and modern browser such as Chrome/Firefox should be used.\\
+\noindent \textbf{Test Steps:}
+\begin{itemize}
+\item Open a web browser and open the URL https://ambivert.me/jsxc/example/
+\item Enter the registered ID and password
+\item Click on Login Button
+\item Once logged in, click on a contact name
+\item Click on a contact name and then on the video chat button
+\end{itemize}
+\noindent \textbf{Expected Result:}
+The video chat request is sent to the contact and video streaming is possible..\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s31.png}
+\caption{Video Chat Test}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s32.png}
+\caption{Chat Accepting Video Chat Test}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{input/images/s33.png}
+\caption{Video chat Accepted Test}
+\end{figure}
+\end{itemize}

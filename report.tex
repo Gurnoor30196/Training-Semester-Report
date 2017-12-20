@@ -1,0 +1,94 @@
+\documentclass[12pt,includeheadfoot,a4paper]{report}
+\usepackage[print,nopanel]{pdfscreen}
+%\begin{print}
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+%\section{type}
+%\usepackage{sagetex}
+
+\usepackage{rotating}
+\usepackage{listings}
+%============================%
+\usepackage{url}
+%\usepackage{natbib}
+%============================%
+\usepackage{lastpage}
+\usepackage{macro/macro}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+\usepackage[Glenn]{fncychap}
+\lhead{\bfseries Paigaam}
+\rhead{}
+\usepackage[left=2.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\margins{2.5cm}{1.5cm}{1.5cm}{1.5cm}
+\pagestyle{fancy}
+%\end{print}
+\begin{screen}
+
+\renewcommand{\encodingdefault}{T1}
+\usepackage{setspace}
+\linespread{1.5}
+\renewcommand{\rmdefault}{ptm}
+\end{screen}
+\screensize{8cm}{9cm}
+\overlay{overlay8.pdf}
+\usepackage{graphicx}
+\begin{document}
+\input{input/titlepage.tex}
+
+\thispagestyle{empty}
+\pagetitle
+\newpage
+\pagenumbering{Roman}
+\cfoot{\thepage}
+\newpage
+\input{input/certi.tex}
+\newpage
+\input{input/abstract.tex}
+\newpage
+\input{input/acknowledgement.tex}
+\newpage
+\input{input/abb.tex}
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+
+\newpage
+
+
+\pagenumbering{arabic}
+\cfoot{\thepage}
+
+
+\newpage
+\chapter{Introduction}
+%\chapter{Introduction To Organisation}
+\input{input/company.tex}
+\input{input/feasibitystudy.tex}
+\chapter{Requirement Analysis and System Specification}
+\input{input/ra.tex}
+%input{input/Soft.tex}
+\input{input/softreq.tex}
+%\input{input/design.tex}
+%\input{input/techno-used.tex}
+\chapter{Project Design}
+%\input{input/softreq.tex}
+%\input{input/Soft.tex}
+\input{input/design.tex}
+%\chapter{Experimental Results and Comparison}
+%\input{input/Conclusion/results.tex}
+\chapter{Development and Implementation}
+\input{input/lan.tex}
+%\input{input/dev/json.tex}
+%\input{input/tech/impl.tex}
+%\input{input/tech/test.tex}
+\chapter{Conclusion and Future Scope}
+\input{input/Conclusion/conclusion.tex}
+%\input{input/legacy.tex}
+\input{input/Conclusion/future.tex}
+%\input{input/legacy.tex}
+\input{input/Conclusion/bibliography.tex}
+\end{document}
+
